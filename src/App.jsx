@@ -1,8 +1,9 @@
 import './App.css'
-import Header from './components/header'
-import Footer from './components/footer'
-import CvSection from './components/cvSection'
-import ExperienceItem from './components/experienceItem'
+import Header from './components/header/header'
+import Footer from './components/footer/footer'
+import CvSection from './components/cvSection/cvSection'
+import ExperienceItem from './components/work/workItem'
+import SkillsSection from './components/skills/skillsSection'
 
 const personalInfo = {
   name: "Jan Novák",
@@ -31,7 +32,7 @@ const skills = [
   "Git, GitHub, VSCode",
 ];
 
-function App() {
+const App = () => {
   return (
     <main className="cv">
       <Header
@@ -53,11 +54,7 @@ function App() {
         ))}
       </CvSection>
 
-      <CvSection title="Dovednosti">
-        {skills.map((skill) => (
-          <ExperienceItem key={skill} title={skill} />
-        ))}
-      </CvSection>
+      <SkillsSection title="Dovednosti" skills={skills} />
 
       <Footer />
     </main>

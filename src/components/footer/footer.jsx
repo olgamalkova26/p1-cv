@@ -1,3 +1,5 @@
+import "./footer.css"
+
 const Footer = () => {
     return <footer className="cv-footer">
         <a src='https://github.com/jannovak' target="_blank" rel='noopener noreferrer'>
