@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './modal.css';
 
 const Modal = ({ children, loading = false, title, onClose }) => {
@@ -7,6 +7,23 @@ const Modal = ({ children, loading = false, title, onClose }) => {
       onClose?.();
     }
   };
+
+  // Handle ESC key to close modal
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose?.();
+      }
+    };
+
+    // Add event listener when modal is mounted
+    document.addEventListener('keydown', handleKeyDown);
+
+    // Cleanup: remove event listener when modal is unmounted
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [onClose]);
 
   return (
     <div className="modal-overlay" onClick={handleOverlayClick}>
