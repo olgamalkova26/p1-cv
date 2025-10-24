@@ -1,7 +1,7 @@
 .job-modal-content-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 24px;
 }
 
 .job-modal-content-description {
@@ -13,21 +13,23 @@
 .job-modal-content-skills-list {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    justify-items: space-between;
     align-items: center;
     list-style-type: none;
     padding: 0;
+    gap: 12px;
+    row-gap: 16px;
 }
 
 .skill-item {
     font-size: 0.9rem;
     font-weight: 400;
-    font-size: 1.2em;
     text-align: center;
     line-height: 1.2;
-    list-style-type: disc;
-    padding-left: 3px 5px;
-    margin: 3px 5px;
+    padding: 6px 12px;
+    margin: 0;
     background-color: #f0f0f0;
+    border-radius: 4px;
+    white-space: nowrap;
 }
