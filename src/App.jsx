@@ -72,14 +72,36 @@ const App = () => {
     setSearchParams({});
   };
 
+  const ModalContent = () => {
+    if (jobModalContentIndex !== undefined && jobModalContentIndex >= 0 && jobModalContentIndex < jobs.length) {
+      // Get current job from jobs array
+      const currentJob = jobs[jobModalContentIndex];
+
+      // Create modal header
+      const ModalHeader = () => <ExperienceItem
+        key={currentJob.title}
+        title={currentJob.title}
+        icon={currentJob.icon} 
+        period={currentJob.period}
+        onClick={() => setSearchParams({ job: jobModalContentIndex.toString() })}
+      />;
+
+      // Create modal content
+      const ModalContent = () => <JobModalContent skills={currentJob.skills} description={currentJob.description} />;
+
+      // Return modal
+      return (
+          <Modal title={<ModalHeader />} onClose={closeModal}>
+            <ModalContent />
+          </Modal>
+      )
+    }
+    return null;
+  }
+
   return (
     <main className="cv">
-    { jobModalContentIndex !== undefined && jobModalContentIndex >= 0 && jobModalContentIndex < jobs.length && <Modal title={jobs[jobModalContentIndex].title} onClose={closeModal}>
-      <JobModalContent
-        skills={jobs[jobModalContentIndex].skills}
-        description={jobs[jobModalContentIndex].description}
-      />
-    </Modal> || null}
+      <ModalContent />
       <Header
         name={personalInfo.name}
         email={personalInfo.email}
