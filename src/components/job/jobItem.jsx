@@ -1,8 +1,8 @@
-import './workItem.css';
+import './jobItem.css';
 
-const WorkItem = ({ icon, title, period }) => {
+const JobItem = ({ icon, title, period, ...props }) => {
   return (
-    <li className="work-item">
+    <li className="work-item" {...props}>
       <img src={icon} alt="ikona práce" className="work-item-icon" />
       <div className="work-item-content">
         <span className="work-item-title">{title}</span>
@@ -12,4 +12,4 @@ const WorkItem = ({ icon, title, period }) => {
   );
 };
 
-export default WorkItem;
+export default JobItem;

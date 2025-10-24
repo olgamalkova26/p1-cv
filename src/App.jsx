@@ -2,8 +2,11 @@ import './App.css'
 import Header from './components/header/header'
 import Footer from './components/footer/footer'
 import CvSection from './components/cvSection/cvSection'
-import ExperienceItem from './components/work/workItem'
+import ExperienceItem from './components/job/jobItem'
 import SkillList from './components/skills/skillList'
+import Modal from './components/modal/modal'
+import JobModalContent from './components/job/jobModalContent'
+import { useState } from 'react'
 
 /**
  * Osobní informace
@@ -24,11 +27,15 @@ const jobs = [
     icon: "https://cdn-icons-png.flaticon.com/512/906/906343.png",
     title: "Frontend Developer – ABC s.r.o.",
     period: "2023 / 01 – 2025 / 03",
+    description: "Na této pozici jsem se podílel na vývoji webových aplikací a mobilních aplikací a kopal kanály a nasazoval jsem na ně víka.",
+    skills: ["HTML", "CSS", "JavaScript", "React", "Go", "Node.js", "PHP", "Git", "GitHub", "Gitlab", "VSCode"],
   },
   {
     icon: "https://cdn-icons-png.flaticon.com/512/906/906175.png",
     title: "Web Designer – Freelance",
     period: "2021 / 05 – 2022 / 12",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    skills: ["HTML", "CSS", "JavaScript", "React", "Go", "Node.js", "PHP", "Git", "GitHub", "Gitlab", "VSCode"],
   },
 ];
 
@@ -53,8 +60,16 @@ const links = [
  * Hlavní komponenta aplikace
  */
 const App = () => {
+  const [jobModalContentIndex, setJobModalContentIndex] = useState(undefined);
+
   return (
     <main className="cv">
+    { jobModalContentIndex !== undefined && <Modal title={jobs[jobModalContentIndex].title} onClose={() => setJobModalContentIndex(undefined)}>
+      <JobModalContent
+        skills={jobs[jobModalContentIndex].skills}
+        description={jobs[jobModalContentIndex].description}
+      />
+    </Modal> || null}
       <Header
         name={personalInfo.name}
         email={personalInfo.email}
@@ -64,12 +79,13 @@ const App = () => {
       />
 
       <CvSection title="Pracovní zkušenosti">
-        {jobs.map((experience) => (
+        {jobs.map((experience, index) => (
           <ExperienceItem
             key={experience.title}
             title={experience.title}
             icon={experience.icon}
             period={experience.period}
+            onClick={() => setJobModalContentIndex(index)}
           />
         ))}
       </CvSection>

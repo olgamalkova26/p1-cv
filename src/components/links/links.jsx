@@ -6,7 +6,7 @@ const Links = ({ links }) => {
     return (
         <>
             {links.map((linkData, i) => (
-                <a href={linkData.url} target="_blank" rel="noopener noreferrer">
+                <a href={linkData.url} target="_blank" rel="noopener noreferrer" key={i}>
                     {linkData.label}
                 </a>
             ))}
