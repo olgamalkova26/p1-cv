@@ -6,7 +6,7 @@ import ExperienceItem from './components/job/jobItem'
 import SkillList from './components/skills/skillList'
 import Modal from './components/modal/modal'
 import JobModalContent from './components/job/jobModalContent'
-import { useState } from 'react'
+import { useSearchParams, useNavigate } from 'react-router-dom'
 
 /**
  * Osobní informace
@@ -60,11 +60,21 @@ const links = [
  * Hlavní komponenta aplikace
  */
 const App = () => {
-  const [jobModalContentIndex, setJobModalContentIndex] = useState(undefined);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+  
+  // Get job index from URL parameter
+  const jobIndex = searchParams.get('job');
+  const jobModalContentIndex = jobIndex ? parseInt(jobIndex, 10) : undefined;
+
+  // Function to close modal by removing URL parameter
+  const closeModal = () => {
+    setSearchParams({});
+  };
 
   return (
     <main className="cv">
-    { jobModalContentIndex !== undefined && <Modal title={jobs[jobModalContentIndex].title} onClose={() => setJobModalContentIndex(undefined)}>
+    { jobModalContentIndex !== undefined && jobModalContentIndex >= 0 && jobModalContentIndex < jobs.length && <Modal title={jobs[jobModalContentIndex].title} onClose={closeModal}>
       <JobModalContent
         skills={jobs[jobModalContentIndex].skills}
         description={jobs[jobModalContentIndex].description}
@@ -85,7 +95,7 @@ const App = () => {
             title={experience.title}
             icon={experience.icon}
             period={experience.period}
-            onClick={() => setJobModalContentIndex(index)}
+            onClick={() => setSearchParams({ job: index.toString() })}
           />
         ))}
       </CvSection>
