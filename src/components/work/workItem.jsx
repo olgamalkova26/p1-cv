@@ -1,4 +1,4 @@
-import React from "react";
+import './workItem.css';
 
 const WorkItem = ({ icon, title, period }) => {
   return (

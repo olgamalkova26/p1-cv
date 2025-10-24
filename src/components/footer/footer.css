@@ -7,10 +7,11 @@
 
 .cv-footer a {
   color: #000;
+  padding: 2px 5px;
   text-decoration: none;
   font-weight: bold;
 }
 
 .cv-footer a:hover {
-  text-decoration: underline;
+  cursor: pointer;
 }

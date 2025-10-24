@@ -1,16 +1,9 @@
+import Links from "../links/links";
 import "./footer.css"
 
-const Footer = () => {
+const Footer = ({links}) => {
     return <footer className="cv-footer">
-        <a src='https://github.com/jannovak' target="_blank" rel='noopener noreferrer'>
-            Github
-        </a>
-        <span className="sep">
-            |
-        </span>
-        <a src='https://linkedin.com/in/jannovak' target="_blank" rel='noopener noreferrer'>
-            Github
-        </a>
+        <Links links={links} />
     </footer>
 }
 
