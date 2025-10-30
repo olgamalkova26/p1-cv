@@ -7,14 +7,19 @@ import CVPage from './App.jsx'
 import ProfilePage from './pages/profile/profile.page.jsx'
 
 import './index.css'
+import { QueryClient, QueryClientProvider, useQueryClient } from '@tanstack/react-query'
 
-const App = () => (
-  <Routes>
-    <Route path="/" element={<CVPage />} />
-    <Route path="/profile" element={<ProfilePage />} />
-    <Route path="*" Component={() => <div>404 Not Found</div>} />
-  </Routes>
-);
+const App = () => {
+  const queryClient = new QueryClient();
+
+  return <QueryClientProvider client={queryClient}>
+    <Routes>
+      <Route path="/" element={<CVPage />} />
+      <Route path="/profile" element={<ProfilePage />} />
+      <Route path="*" Component={() => <div>404 Not Found</div>} />
+    </Routes>
+  </QueryClientProvider>
+}
 
 /**
  * Hlavní vstupní bod aplikace, spouštíme React ekosystém a výstup vložíme do elementu s ID "root"
