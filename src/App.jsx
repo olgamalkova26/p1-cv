@@ -59,9 +59,8 @@ const links = [
 /**
  * Hlavní komponenta aplikace
  */
-const App = () => {
+const CVRoute = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const navigate = useNavigate();
   
   // Get job index from URL parameter
   const jobIndex = searchParams.get('job');
@@ -131,4 +130,4 @@ const App = () => {
   )
 }
 
-export default App
+export default CVRoute;

@@ -1,10 +1,17 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
 
-import App from './App.jsx'
+import CVRoute from './App.jsx'
 
 import './index.css'
+import ErrorBoundary from './components/errorBoundary.jsx'
+
+const App = () => (
+  <Routes>
+    <Route path="/" element={<CVRoute />} />
+  </Routes>
+);
 
 /**
  * Hlavní vstupní bod aplikace, spouštíme React ekosystém a výstup vložíme do elementu s ID "root"
@@ -12,8 +19,10 @@ import './index.css'
 const root = document.getElementById('root');
 createRoot(root).render(
   <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ErrorBoundary>
   </StrictMode>,
 );
