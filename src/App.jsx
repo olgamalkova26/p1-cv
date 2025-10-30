@@ -59,7 +59,7 @@ const links = [
 /**
  * Hlavní komponenta aplikace
  */
-const CVRoute = () => {
+const CVPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   
   // Get job index from URL parameter
@@ -130,4 +130,4 @@ const CVRoute = () => {
   )
 }
 
-export default CVRoute;
+export default CVPage;
