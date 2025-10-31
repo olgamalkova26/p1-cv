@@ -6,10 +6,11 @@ import ExperienceItem from './components/job/jobItem'
 import SkillList from './components/skills/skillList'
 import Modal from './components/modal/modal'
 import JobModalContent from './components/job/jobModalContent'
-import { useSearchParams, useNavigate } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 
-import { useEffect, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
+import ThemeContext from './utils/context/themeContext'
+import { useContext } from 'react'
 
 const loadData = async () => {
   const personalInfo = await fetch('http://localhost:3002/personalInfo')
@@ -29,6 +30,8 @@ const loadData = async () => {
  */
 const CVPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const { theme } = useContext(ThemeContext);
 
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ['cvData'],
@@ -86,7 +89,9 @@ const CVPage = () => {
   }
 
   return (
-    <main className="cv">
+    <main className="cv" style={{
+      background: theme === 'light' ? 'whitesmoke' : 'black',
+    }}>
       <ModalContent />
       <Header
         name={personalInfo.name}
