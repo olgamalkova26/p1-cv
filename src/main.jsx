@@ -10,6 +10,7 @@ import ProfilePage from './pages/profile/profile.page.jsx';
 
 import './index.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import AppDataProvider from './utils/context/appDataProvider.comp.jsx';
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -17,11 +18,16 @@ const App = () => {
   return (
     <ThemeContextProvider>
       <QueryClientProvider client={queryClient}>
-        <Routes>
-          <Route path="/" element={<CVPage />} />
-          <Route path="/profile" element={<ProfilePage personalInfo={{}} />} />
-          <Route path="*" Component={() => <div>404 Not Found</div>} />
-        </Routes>
+        <AppDataProvider>
+          <Routes>
+            <Route path="/" element={<CVPage />} />
+            <Route
+              path="/profile"
+              element={<ProfilePage personalInfo={{}} />}
+            />
+            <Route path="*" Component={() => <div>404 Not Found</div>} />
+          </Routes>
+        </AppDataProvider>
       </QueryClientProvider>
     </ThemeContextProvider>
   );
