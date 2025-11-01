@@ -1,29 +1,31 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import ThemeContext from './utils/context/provider.jsx'
+import ThemeContextProvider from './utils/context/themeProvider.comp.jsx';
 
-import ErrorBoundary from './components/errorBoundary.jsx'
-import CVPage from './App.jsx'
-import ProfilePage from './pages/profile/profile.page.jsx'
+import ErrorBoundary from './components/errorBoundary.jsx';
+import CVPage from './App.jsx';
+import ProfilePage from './pages/profile/profile.page.jsx';
 
-import './index.css'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import './index.css';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const App = () => {
   const queryClient = new QueryClient();
 
-  return <ThemeContext>
-    <QueryClientProvider client={queryClient}>
-      <Routes>
-        <Route path="/" element={<CVPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="*" Component={() => <div>404 Not Found</div>} />
-      </Routes>
-    </QueryClientProvider>
-  </ThemeContext>
-}
+  return (
+    <ThemeContextProvider>
+      <QueryClientProvider client={queryClient}>
+        <Routes>
+          <Route path="/" element={<CVPage />} />
+          <Route path="/profile" element={<ProfilePage personalInfo={{}} />} />
+          <Route path="*" Component={() => <div>404 Not Found</div>} />
+        </Routes>
+      </QueryClientProvider>
+    </ThemeContextProvider>
+  );
+};
 
 /**
  * Hlavní vstupní bod aplikace, spouštíme React ekosystém a výstup vložíme do elementu s ID "root"

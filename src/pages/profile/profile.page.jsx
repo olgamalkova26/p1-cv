@@ -1,5 +1,22 @@
-const ProfilePage = () => <main>
-    <img src="https://cdn.builder.io/api/v1/image/assets%2Fac51e69ef16e4f8fbc1a1df6a44edf61%2Ff7665f44911a4cbdb8509100ab1f27ad?format=webp&format=webp&width=2000" alt="Profile" />
-</main>;
+const ProfilePage = ({ personalInfo }) => (
+  <main className="profile-page">
+    <div className="profile-wrapper">
+      <img
+        className="profile-photo"
+        src={personalInfo.photoSrc}
+        alt={personalInfo.name}
+      />
+      <div className="profile-content">
+        <h2>{personalInfo.name}</h2>
+        <p className="profile-desc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit enim ab
+          reprehenderit molestiae omnis quisquam incidunt ducimus, illo non cum
+          quia eum perferendis doloremque accusamus quibusdam nostrum,
+          voluptate, delectus consequuntur.
+        </p>
+      </div>
+    </div>
+  </main>
+);
 
 export default ProfilePage;
