@@ -46,3 +46,5 @@ createRoot(root).render(
     </ErrorBoundary>
   </StrictMode>,
 );
+
+export default App;
