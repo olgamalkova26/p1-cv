@@ -8,7 +8,6 @@ import Modal from './components/modal/modal'
 import JobModalContent from './components/job/jobModalContent'
 import { useSearchParams } from 'react-router-dom'
 
-import { useQuery } from '@tanstack/react-query'
 import ThemeContext from './utils/context/themeContext'
 import { useContext } from 'react'
 import AppDataContext from './utils/context/appDataContext'

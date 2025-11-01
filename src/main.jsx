@@ -8,9 +8,10 @@ import ErrorBoundary from './components/errorBoundary.jsx'
 import CVPage from './App.jsx'
 import ProfilePage from './pages/profile/profile.page.jsx'
 
-import './index.css'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import AppDataProvider from './utils/context/appDataProvider.comp.jsx'
+
+import './index.css'
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -43,3 +44,5 @@ createRoot(root).render(
     </ErrorBoundary>
   </StrictMode>,
 );
+
+export default App;

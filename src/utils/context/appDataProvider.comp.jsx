@@ -1,6 +1,4 @@
 import { useQuery } from '@tanstack/react-query';
-import ThemeContext from './themeContext';
-import { useState } from 'react';
 import AppDataContext from './appDataContext';
 
 const loadData = async () => {
