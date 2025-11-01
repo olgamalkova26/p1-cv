@@ -10,8 +10,10 @@ const loadData = async () => {
         .then(response => response.json());
     const links = await fetch('http://localhost:3002/links')
         .then(response => response.json());
+    const projects = await fetch('http://localhost:3002/projects')
+        .then(response => response.json());
 
-    return { personalInfo, jobs, metadata, links };
+    return { personalInfo, jobs, metadata, links, projects };
 }
 
 const AppDataProvider = ({ children }) => {
