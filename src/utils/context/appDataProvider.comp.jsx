@@ -1,22 +1,24 @@
 import { useQuery } from '@tanstack/react-query';
-import ThemeContext from './themeContext';
 import AppDataContext from './appDataContext';
 
 const loadData = async () => {
-  const personalInfo = await fetch('http://localhost:3001/personalInfo').then(
+  const personalInfo = await fetch('http://localhost:3002/personalInfo').then(
     (response) => response.json(),
   );
-  const jobs = await fetch('http://localhost:3001/jobs').then((response) =>
+  const jobs = await fetch('http://localhost:3002/jobs').then((response) =>
     response.json(),
   );
-  const metadata = await fetch('http://localhost:3001/metadata').then(
+  const metadata = await fetch('http://localhost:3002/metadata').then(
     (response) => response.json(),
   );
-  const links = await fetch('http://localhost:3001/links').then((response) =>
+  const links = await fetch('http://localhost:3002/links').then((response) =>
     response.json(),
+  );
+  const projects = await fetch('http://localhost:3002/projects').then(
+    (response) => response.json(),
   );
 
-  return { personalInfo, jobs, metadata, links };
+  return { personalInfo, jobs, metadata, links, projects };
 };
 
 const AppDataProvider = ({ children }) => {

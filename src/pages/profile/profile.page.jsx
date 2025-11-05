@@ -6,6 +6,7 @@ import './profile.page.css';
 
 const ProfilePage = () => {
   const { appData } = useContext(AppDataContext);
+
   const { personalInfo } = appData;
 
   return (
