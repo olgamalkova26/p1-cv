@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import AppDataContext from './appDataContext';
 
 const loadData = async () => {
-  const personalInfo = await fetch('http://localhost:3002/personalInfo').then(
+  const personalInfo = await fetch('http://localhost:3000/personalInfo').then(
     (response) => response.json(),
   );
   const jobs = await fetch('http://localhost:3002/jobs').then((response) =>
