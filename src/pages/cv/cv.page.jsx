@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import ThemeContext from '../../utils/context/themeContext';
 import AppDataContext from '../../utils/context/appDataContext';
 import JobModalContent from '../../components/job/jobModalContent';
@@ -15,6 +15,7 @@ import Header from '../../components/header/header';
  */
 const CVPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   const { theme } = useContext(ThemeContext);
 
@@ -24,7 +25,7 @@ const CVPage = () => {
     return <div>No data available</div>;
   }
 
-  const { personalInfo, jobs, metadata, links } = appData;
+  const { personalInfo, jobs, metadata, links, projects } = appData;
 
   // Get job index from URL parameter
   const jobIndex = searchParams.get('job');
@@ -46,7 +47,7 @@ const CVPage = () => {
 
       // Create modal header
       const ModalHeader = () => (
-        <ExperienceItem
+        <JobItem
           key={currentJob.title}
           title={currentJob.title}
           icon={currentJob.icon}
@@ -105,6 +106,18 @@ const CVPage = () => {
 
       <CvSection title="Dovednosti">
         <SkillList skills={metadata.skills} />
+      </CvSection>
+
+      <CvSection title="Projekty">
+        {projects.map((project, index) => (
+          <JobItem
+            key={project.id}
+            title={project.title}
+            icon={project.img}
+            period={project.tags.join(', ')}
+            onClick={() => navigate(`/project/${index}`)}
+          />
+        ))}
       </CvSection>
 
       <Footer links={links} />

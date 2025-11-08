@@ -3,22 +3,21 @@
     "name": "Olga Málková",
     "email": "olgamalkova@centrum.cz",
     "phone": "+420 728 782 275",
-    "website": "www.jancsi.cz",
+    "website": "www.tropik.cz",
     "photoSrc": "https://github.com/olgamalkova26/my-cv-assets/blob/main/images/profilovka.png?raw=true"
   },
   "jobs": [
     {
       "id": 1,
-      "icon": "https://cdn-icons-png.flaticon.com/512/906/906343.png",
-      "title": "Frontend Developer – ABC s.r.o.",
-      "period": "2023 / 01 – 2025 / 03",
-      "description": "Na této pozici jsem se podílel na vývoji webových aplikací a mobilních aplikací a kopal kanály a nasazoval jsem na ně víka.",
+      "icon": "https://media.licdn.com/dms/image/v2/C4D0BAQFxEQdE36K8qw/company-logo_100_100/company-logo_100_100/0/1630551584585/inventi_development_logo?e=1764201600&v=beta&t=CQUW0G3aHu79Yi3dPhJ-CrzfrvynJOddVw4DRVJQ2tQ",
+      "title": "Quality Assurance – Inventi",
+      "period": "2022 – současnost",
+      "description": "Práce pro různé firmy v oblasti testingu. Testování karavanů, webové aplikace. Práce pro energetickou společnost, pojišťovnu, automobilku. ",
       "skills": [
-        "HTML",
-        "CSS",
+        "Linux",
+        "Postman",
         "JavaScript",
-        "React",
-        "Go",
+        "DB",
         "Node.js",
         "PHP",
         "Git",
@@ -29,19 +28,19 @@
     },
     {
       "id": 2,
-      "icon": "https://cdn-icons-png.flaticon.com/512/906/906175.png",
-      "title": "Web Designer – Freelance",
-      "period": "2021 / 05 – 2022 / 12",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "icon": "https://media.licdn.com/dms/image/v2/D4E0BAQEkRfo-gmaXNA/company-logo_100_100/company-logo_100_100/0/1691943445226/eurosoftware_logo?e=1764201600&v=beta&t=MA6Bdqhcb22f5JhfQF3-LDmtDnYLDg8Bm9kYvIY_FRU",
+      "title": "Delivery Engineer – Eurosoftware",
+      "period": "2014 – 2022 ",
+      "description": "Instalace firemního softwaru na produkčním prostředí zákaznika. Support zákazníka, příprave prostředí pro testování. ",
       "skills": [
         "HTML",
         "CSS",
         "JavaScript",
-        "React",
-        "Go",
-        "Node.js",
-        "PHP",
-        "Git",
+        "SAP",
+        "Netviewer",
+        "Tomcat",
+        "DB",
+        "AWS",
         "GitHub",
         "Gitlab",
         "VSCode"
@@ -51,27 +50,27 @@
   "projects": [
     {
       "id": 1,
-      "title": "Todo App",
-      "img": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=80&auto=format&fit=crop",
-      "tags": ["React", "Vite", "CSS"],
-      "description": "Jednoduchá aplikace pro správu úkolů s ukládáním do localStorage.",
-      "url": "#"
+      "title": "Order Cards",
+      "img": "https://images.unsplash.com/photo-1736901217559-70e403fcb98f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
+      "tags": ["HTML", "CSS", "JavaScript"],
+      "description": "Jednoduchá aplikace napojená na API fakestoru, která si načte zboží a přepočítává kurzy měn podle aktuálního kurzu čnb. ",
+      "url": "https://order-card-javascript.netlify.app/"
     },
     {
       "id": 2,
-      "title": "Portfolio Site",
-      "img": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80&auto=format&fit=crop",
+      "title": "Evidence docházky",
+      "img": "https://plus.unsplash.com/premium_photo-1661506766784-c99954e6592f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1169",
       "tags": ["HTML", "CSS", "JavaScript"],
-      "description": "Responzivní portfolio představení mých projektů a kontaktů.",
-      "url": "#"
+      "description": "Takovej pokus o vibecoding, ale zase se to používá v jedné firmě na vyplnění docházky. ",
+      "url": "https://dochazka-mzas.netlify.app/"
     },
     {
       "id": 3,
-      "title": "Weather Dashboard",
-      "img": "https://images.unsplash.com/photo-1501973801540-537f08ccae7b?w=800&q=80&auto=format&fit=crop",
+      "title": "Netflix app",
+      "img": "https://images.unsplash.com/photo-1643208589889-0735ad7218f0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1169",
       "tags": ["React", "API", "Node.js"],
-      "description": "Dashboard ukazující počasí z veřejného API s ukládáním oblíbených měst.",
-      "url": "#"
+      "description": "První pokus o programování v Reactu.",
+      "url": "https://github.com/olgamalkova26/netflix-app"
     }
   ],
   "metadata": {
@@ -80,7 +79,6 @@
       "CSS",
       "JavaScript",
       "React",
-      "Go",
       "Node.js",
       "PHP",
       "Git",
@@ -92,19 +90,19 @@
   "links": [
     {
       "label": "GitHub",
-      "url": "https://github.com/sjiamnocna"
+      "url": "https://github.com/olgamalkova26"
     },
     {
       "label": "Gitlab",
-      "url": "https://gitlab.com/sjiamnocna"
+      "url": "https://gitlab.com/olgamalkova26"
     },
     {
       "label": "LinkedIn",
-      "url": "https://linkedin.com/in/sjiamnocna"
+      "url": "https://www.linkedin.com/in/olga-m-b65ab013a/"
     },
     {
       "label": "Portfolio",
-      "url": "https://jancsi.cz"
+      "url": "https://nenizatim.cz"
     }
   ]
 }
